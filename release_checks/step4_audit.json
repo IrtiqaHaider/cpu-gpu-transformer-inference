@@ -1,0 +1,214 @@
+{
+  "archive_sha256": "4e5918a8382d0487c5e5f4c80a8318f41a175c629882ae561de96619179bfae9",
+  "analysis_reproduced": true,
+  "all_saved_csvs_reproduced": true,
+  "step3_audit_reproduced": true,
+  "predictions_unchanged": true,
+  "decisions_unchanged": true,
+  "model_bytes_unchanged": true,
+  "summary": {
+    "complete": true,
+    "complete_case_thread_settings": 26,
+    "expected_case_thread_settings": 26,
+    "failures": [],
+    "measured_generation_trials": 260,
+    "thread_design": "ABBA (2,1,1,2); two blocks per thread setting in one new VM",
+    "memory_metrics": [
+      {
+        "cpu_threads": 1,
+        "gpu_positive_cases": 8,
+        "median_ape_pct": 0.8838025558515761,
+        "worst_ape_pct": 1.8695316435186404
+      },
+      {
+        "cpu_threads": 2,
+        "gpu_positive_cases": 8,
+        "median_ape_pct": 0.8226331917320528,
+        "worst_ape_pct": 1.8695316435186404
+      }
+    ],
+    "policy_metrics": [
+      {
+        "cpu_threads": 1,
+        "policy": "max_gpu",
+        "decisions": 16,
+        "budget_violations": 0,
+        "median_feasible_regret_pct": 0.0,
+        "worst_feasible_regret_pct": 215.15237564314646
+      },
+      {
+        "cpu_threads": 1,
+        "policy": "compute",
+        "decisions": 16,
+        "budget_violations": 0,
+        "median_feasible_regret_pct": 0.0,
+        "worst_feasible_regret_pct": 215.15237564314646
+      },
+      {
+        "cpu_threads": 1,
+        "policy": "compute_transfer",
+        "decisions": 16,
+        "budget_violations": 0,
+        "median_feasible_regret_pct": 0.0,
+        "worst_feasible_regret_pct": 215.15237564314646
+      },
+      {
+        "cpu_threads": 2,
+        "policy": "max_gpu",
+        "decisions": 16,
+        "budget_violations": 0,
+        "median_feasible_regret_pct": 0.0,
+        "worst_feasible_regret_pct": 227.0565708490714
+      },
+      {
+        "cpu_threads": 2,
+        "policy": "compute",
+        "decisions": 16,
+        "budget_violations": 0,
+        "median_feasible_regret_pct": 0.0,
+        "worst_feasible_regret_pct": 227.0565708490714
+      },
+      {
+        "cpu_threads": 2,
+        "policy": "compute_transfer",
+        "decisions": 16,
+        "budget_violations": 0,
+        "median_feasible_regret_pct": 0.0,
+        "worst_feasible_regret_pct": 227.0565708490714
+      }
+    ],
+    "source_seal": {
+      "status": "verified",
+      "seal_sha256": "8b1e5bc62de3fb9fbd1afa0a11bb4eb9452c0c5f98bb26328bb388ff734c66b5",
+      "parent_seal_sha256": "060f6602b0ae5210b8ca9a4fc4993df91d800f4d0ede4ae81ed90f7a99713d84",
+      "new_gpu_inference": false
+    },
+    "new_vm_boot_id": "02eaf81a-5718-4419-bc17-09da85907fe2",
+    "parent_vm_boot_id": "a70c1bd4-11a0-4c09-b8c7-9c1724d6ba4d",
+    "different_vm": true,
+    "refitting": false,
+    "prediction_metrics": [
+      {
+        "variant": "compute",
+        "target": "prefill_ms",
+        "median_ape_pct": 7.684280637633078,
+        "worst_ape_pct": 13.42485292672546,
+        "cpu_threads": 1
+      },
+      {
+        "variant": "compute",
+        "target": "ttft_ms",
+        "median_ape_pct": 7.803353774109545,
+        "worst_ape_pct": 37.10855544405069,
+        "cpu_threads": 1
+      },
+      {
+        "variant": "compute",
+        "target": "decode_tpot_ms",
+        "median_ape_pct": 22.480511447627816,
+        "worst_ape_pct": 34.2976109917069,
+        "cpu_threads": 1
+      },
+      {
+        "variant": "compute",
+        "target": "generation_ms",
+        "median_ape_pct": 15.94268810606978,
+        "worst_ape_pct": 29.396464617163854,
+        "cpu_threads": 1
+      },
+      {
+        "variant": "compute_transfer",
+        "target": "prefill_ms",
+        "median_ape_pct": 7.718845077904602,
+        "worst_ape_pct": 13.380841752245987,
+        "cpu_threads": 1
+      },
+      {
+        "variant": "compute_transfer",
+        "target": "ttft_ms",
+        "median_ape_pct": 7.748850278160491,
+        "worst_ape_pct": 37.08505113823786,
+        "cpu_threads": 1
+      },
+      {
+        "variant": "compute_transfer",
+        "target": "decode_tpot_ms",
+        "median_ape_pct": 21.80765109584195,
+        "worst_ape_pct": 34.32764814705913,
+        "cpu_threads": 1
+      },
+      {
+        "variant": "compute_transfer",
+        "target": "generation_ms",
+        "median_ape_pct": 17.467570007529844,
+        "worst_ape_pct": 29.440210996440875,
+        "cpu_threads": 1
+      },
+      {
+        "variant": "compute",
+        "target": "prefill_ms",
+        "median_ape_pct": 4.235585696388366,
+        "worst_ape_pct": 11.784018675023999,
+        "cpu_threads": 2
+      },
+      {
+        "variant": "compute",
+        "target": "ttft_ms",
+        "median_ape_pct": 5.89928732701408,
+        "worst_ape_pct": 23.190653254229645,
+        "cpu_threads": 2
+      },
+      {
+        "variant": "compute",
+        "target": "decode_tpot_ms",
+        "median_ape_pct": 21.677606670363716,
+        "worst_ape_pct": 38.59707774057759,
+        "cpu_threads": 2
+      },
+      {
+        "variant": "compute",
+        "target": "generation_ms",
+        "median_ape_pct": 14.777207267913905,
+        "worst_ape_pct": 29.755900761778587,
+        "cpu_threads": 2
+      },
+      {
+        "variant": "compute_transfer",
+        "target": "prefill_ms",
+        "median_ape_pct": 4.2189290412729115,
+        "worst_ape_pct": 11.739173369214873,
+        "cpu_threads": 2
+      },
+      {
+        "variant": "compute_transfer",
+        "target": "ttft_ms",
+        "median_ape_pct": 5.808698751984953,
+        "worst_ape_pct": 23.16194743600679,
+        "cpu_threads": 2
+      },
+      {
+        "variant": "compute_transfer",
+        "target": "decode_tpot_ms",
+        "median_ape_pct": 23.418707141655627,
+        "worst_ape_pct": 38.628076519518764,
+        "cpu_threads": 2
+      },
+      {
+        "variant": "compute_transfer",
+        "target": "generation_ms",
+        "median_ape_pct": 14.819427793739159,
+        "worst_ape_pct": 29.799768659289928,
+        "cpu_threads": 2
+      }
+    ],
+    "calibration_scope": "Models remain two-thread calibrated. One-thread errors are domain-shift diagnostics.",
+    "limitations": [
+      "Post-hoc selected replication subset, not a second blind workload evaluation.",
+      "Only one additional VM; no universal latency or tail guarantee.",
+      "Budget constraint is peak allocated tensor memory, not a hard physical VRAM limit.",
+      "No claim that CPU thread count alone causes all timing changes.",
+      "All three policies share the same unchanged 5% + 16 MiB guard.",
+      "Whole-case telemetry includes warmup, placement and checks; it is not per-trial attribution."
+    ]
+  }
+}

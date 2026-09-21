@@ -1,0 +1,10 @@
+{
+  "input_sha256": "83d4e5f5d358ef7506676bb8a3f02c3511be086d1a78d84c944f075779ead1ce",
+  "baseline_sha256": "7c099f37a5b0397db931e2f2ed383548ccb1798022445efb8be092a333805469",
+  "configurations": 45,
+  "original_trials_audited": 450,
+  "uploaded_test_log": "........................................................................ [ 70%]\n..............................                                           [100%]\n102 passed in 8.46s\n",
+  "source_verified": true,
+  "refitting": false,
+  "predictions_are_measurements": false
+}

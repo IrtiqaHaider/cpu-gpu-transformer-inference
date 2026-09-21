@@ -1,0 +1,7 @@
+{
+  "expected_cases": 23,
+  "complete_cases": 23,
+  "failures": [],
+  "complete": true,
+  "scope": "One session, two reverse-order blocks; no refitting."
+}

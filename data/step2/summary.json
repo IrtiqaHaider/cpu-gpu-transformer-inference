@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.2.0",
+  "analysis_type": "retrospective_memory_and_policy_evaluation",
+  "configurations": 45,
+  "original_trials_audited": 450,
+  "folds": 9,
+  "policies": 3,
+  "budgets_per_workload": 8,
+  "policy_decision_records": 216,
+  "new_gpu_inference": false,
+  "memory": {
+    "gpu_validation_rows": 36,
+    "cpu_zero_rows": 9,
+    "median_ape_pct_gpu_only": 0.7266110740203775,
+    "worst_ape_pct_gpu_only": 3.7821692835086798,
+    "mae_mib_gpu_only": 4.170884545091908,
+    "largest_underprediction_mib": 15.389107559991942,
+    "guard_misses_rows": 0,
+    "guard_is_not_a_statistical_guarantee": true
+  },
+  "policy_metrics": {
+    "max_gpu": {
+      "decisions": 72,
+      "feasible": 72,
+      "budget_violations": 0,
+      "abstentions": 0,
+      "oracle_matches": 56,
+      "median_regret_pct_among_feasible": 0.0,
+      "worst_regret_pct_among_feasible": 92.07876780692554,
+      "worst_budget_excess_mib": 0.0
+    },
+    "compute": {
+      "decisions": 72,
+      "feasible": 72,
+      "budget_violations": 0,
+      "abstentions": 0,
+      "oracle_matches": 56,
+      "median_regret_pct_among_feasible": 0.0,
+      "worst_regret_pct_among_feasible": 92.07876780692554,
+      "worst_budget_excess_mib": 0.0
+    },
+    "compute_transfer": {
+      "decisions": 72,
+      "feasible": 72,
+      "budget_violations": 0,
+      "abstentions": 0,
+      "oracle_matches": 56,
+      "median_regret_pct_among_feasible": 0.0,
+      "worst_regret_pct_among_feasible": 92.07876780692554,
+      "worst_budget_excess_mib": 0.0
+    }
+  },
+  "comparison_to_max_gpu": {
+    "compute": {
+      "same_choice_as_max_gpu": 72,
+      "decisions": 72
+    },
+    "compute_transfer": {
+      "same_choice_as_max_gpu": 72,
+      "decisions": 72
+    }
+  },
+  "limitations": [
+    "Historical results were already inspected; grouped diagnostics are not a new blind test.",
+    "Only five prefix GPU counts and the original GPT-2 small/FP32/two-thread/T4 environment are supported.",
+    "Memory target is the case maximum across measured prefill and generation calls, not per-trial median memory.",
+    "Payload floor is exact for the supplied engine; residual coefficients are empirical, not causal terms.",
+    "GPU allocation is not reserved/process/device memory; CPU RAM, co-tenants and placement transients are unconstrained.",
+    "The fixed 5% plus 16 MiB guard is a heuristic, not an OOM or confidence guarantee.",
+    "Regret uses the same five measured candidates. It is not global optimality or a speedup against GPU-only.",
+    "Budget grid repeats the same nine workloads; 216 policy records are not 216 independent experiments.",
+    "Model fits on all historical rows are for future predictions; evaluation refits both model types per fold.",
+    "CPU timing spikes remain in targets. No fresh GPU inference or physical budget-enforcement experiment is run.",
+    "Changed attention backend, precision, engine cache allocation, hardware or model size requires revalidation."
+  ],
+  "analysis_wall_seconds": 3.861878913000055
+}

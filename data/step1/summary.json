@@ -1,0 +1,183 @@
+{
+  "schema_version": "0.1.0",
+  "analysis_type": "retrospective_calibration_and_grouped_validation",
+  "configuration_rows": 45,
+  "raw_trials_checked": 450,
+  "folds_per_model": 9,
+  "group_definition": [
+    "batch_size",
+    "sequence_length",
+    "new_tokens"
+  ],
+  "input_sha256": "7c099f37a5b0397db931e2f2ed383548ccb1798022445efb8be092a333805469",
+  "new_gpu_benchmarks_run": false,
+  "models": {
+    "compute": {
+      "retrospective_grouped_cv": {
+        "prefill_ms": {
+          "n": 45,
+          "mae_ms": 109.09877644412897,
+          "median_ape_pct": 5.463007420463383,
+          "mean_ape_pct": 10.871054514022507,
+          "worst_ape_pct": 50.32241820499588,
+          "wape_pct": 14.97640624805417
+        },
+        "ttft_ms": {
+          "n": 45,
+          "mae_ms": 161.82465692536766,
+          "median_ape_pct": 6.081769457004702,
+          "mean_ape_pct": 12.201025254795386,
+          "worst_ape_pct": 62.04307683206521,
+          "wape_pct": 20.723633594591384
+        },
+        "decode_tpot_ms": {
+          "n": 45,
+          "mae_ms": 3.4223811448478045,
+          "median_ape_pct": 6.399496183864758,
+          "mean_ape_pct": 7.777189984110507,
+          "worst_ape_pct": 22.074836213881717,
+          "wape_pct": 8.81959251745961
+        },
+        "generation_ms": {
+          "n": 45,
+          "mae_ms": 271.82314782123194,
+          "median_ape_pct": 6.251582618213115,
+          "mean_ape_pct": 8.446012719835663,
+          "worst_ape_pct": 29.047011432402776,
+          "wape_pct": 13.420159977651142
+        }
+      },
+      "training_fit_diagnostic_not_validation": {
+        "prefill_ms": {
+          "n": 45,
+          "mae_ms": 88.09105678426009,
+          "median_ape_pct": 3.5846298808805352,
+          "mean_ape_pct": 6.853820596904914,
+          "worst_ape_pct": 31.717276171605157,
+          "wape_pct": 12.092596234542677
+        },
+        "ttft_ms": {
+          "n": 45,
+          "mae_ms": 137.62288318665304,
+          "median_ape_pct": 4.705923913420359,
+          "mean_ape_pct": 7.914462968717469,
+          "worst_ape_pct": 42.30250628624342,
+          "wape_pct": 17.624299408876805
+        },
+        "decode_tpot_ms": {
+          "n": 45,
+          "mae_ms": 2.594362394427742,
+          "median_ape_pct": 4.747274611320703,
+          "mean_ape_pct": 5.953389633032669,
+          "worst_ape_pct": 23.001787330669565,
+          "wape_pct": 6.685760057999341
+        },
+        "generation_ms": {
+          "n": 45,
+          "mae_ms": 232.1982524653815,
+          "median_ape_pct": 4.952643260414282,
+          "mean_ape_pct": 6.693457635333097,
+          "worst_ape_pct": 26.501911149738334,
+          "wape_pct": 11.463842279781918
+        }
+      },
+      "feature_count": 8,
+      "rank_by_target": {
+        "prefill_ms": 8,
+        "ttft_ms": 8,
+        "decode_tpot_ms": 7
+      }
+    },
+    "compute_transfer": {
+      "retrospective_grouped_cv": {
+        "prefill_ms": {
+          "n": 45,
+          "mae_ms": 109.53418648176839,
+          "median_ape_pct": 4.974394745541884,
+          "mean_ape_pct": 10.90124490721432,
+          "worst_ape_pct": 50.096445673982736,
+          "wape_pct": 15.036176648976197
+        },
+        "ttft_ms": {
+          "n": 45,
+          "mae_ms": 161.91083583601903,
+          "median_ape_pct": 6.065494917789702,
+          "mean_ape_pct": 12.223956718796389,
+          "worst_ape_pct": 61.827530740853476,
+          "wape_pct": 20.734669861881255
+        },
+        "decode_tpot_ms": {
+          "n": 45,
+          "mae_ms": 3.4313711288702216,
+          "median_ape_pct": 7.059064220948015,
+          "mean_ape_pct": 7.839347960726408,
+          "worst_ape_pct": 23.386082407754806,
+          "wape_pct": 8.842760011803586
+        },
+        "generation_ms": {
+          "n": 45,
+          "mae_ms": 273.58836997466915,
+          "median_ape_pct": 6.182706757214771,
+          "mean_ape_pct": 8.44890756003595,
+          "worst_ape_pct": 29.554083322049095,
+          "wape_pct": 13.50731062646491
+        }
+      },
+      "training_fit_diagnostic_not_validation": {
+        "prefill_ms": {
+          "n": 45,
+          "mae_ms": 88.03069348531994,
+          "median_ape_pct": 3.740185934478223,
+          "mean_ape_pct": 6.853471944793463,
+          "worst_ape_pct": 31.708735338978876,
+          "wape_pct": 12.084309933661352
+        },
+        "ttft_ms": {
+          "n": 45,
+          "mae_ms": 137.57927532855996,
+          "median_ape_pct": 4.768125941946592,
+          "mean_ape_pct": 7.879697669321992,
+          "worst_ape_pct": 42.26712394170856,
+          "wape_pct": 17.6187148873945
+        },
+        "decode_tpot_ms": {
+          "n": 45,
+          "mae_ms": 2.5955789295221385,
+          "median_ape_pct": 4.915877623962921,
+          "mean_ape_pct": 5.94020329308169,
+          "worst_ape_pct": 23.91421875201362,
+          "wape_pct": 6.688895110280681
+        },
+        "generation_ms": {
+          "n": 45,
+          "mae_ms": 234.48173744979363,
+          "median_ape_pct": 4.721079359572883,
+          "mean_ape_pct": 6.6989640584915,
+          "worst_ape_pct": 26.974068690002323,
+          "wape_pct": 11.576580043445551
+        }
+      },
+      "feature_count": 10,
+      "rank_by_target": {
+        "prefill_ms": 10,
+        "ttft_ms": 10,
+        "decode_tpot_ms": 9
+      }
+    }
+  },
+  "limitations": [
+    "All historical results have already been inspected; this is not a new blind test.",
+    "Entire workload groups, not individual trial rows, are withheld in each fold.",
+    "Scaling and coefficients are fitted on each fold's training rows only.",
+    "This version predicts latency only: no memory-budget planner is implemented yet.",
+    "Prefix-only, GPT-2 small, FP32, recorded two-thread T4 environment.",
+    "Transfer features are boundary/payload proxies, not measured or causal PCIe timings.",
+    "Correlated features make individual coefficients non-identifiable as physical costs.",
+    "Some folds extrapolate beyond training batch/sequence extrema; pooled errors mix interpolation and extrapolation.",
+    "Prediction targets are medians; this is not a tail-latency or uncertainty model.",
+    "Predicted generation = predicted TTFT + (N-1)*predicted average decode step. Medians need not add exactly.",
+    "CPU variability, model error and drift can all contribute to validation error.",
+    "Results do not establish a placement advantage or inference speedup."
+  ],
+  "cpu_fit_and_validation_wall_seconds": 0.49797683099995993
+}

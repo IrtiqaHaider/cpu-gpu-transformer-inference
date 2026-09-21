@@ -1,0 +1,41 @@
+{
+  "version": "step2-v0.2.0",
+  "evaluation": "retrospective leave-one-workload-out",
+  "candidate_gpu_layers": [
+    0,
+    3,
+    6,
+    9,
+    12
+  ],
+  "layout": "prefix",
+  "policies": [
+    "max_gpu",
+    "compute",
+    "compute_transfer"
+  ],
+  "budgets_mib": [
+    256,
+    320,
+    384,
+    448,
+    512,
+    640,
+    768,
+    1024
+  ],
+  "objective": "median full generation latency within modeled peak allocated-memory budget",
+  "memory_guard": {
+    "relative": 0.05,
+    "extra_mib": 16.0,
+    "kind": "fixed heuristic, not a confidence bound"
+  },
+  "budget_selection": "Fixed round-number experimental constraints; not actual device limits.",
+  "training": "Both memory residuals and latency models refit on 40 rows; 5 workload rows withheld.",
+  "oracle": "Best measured feasible among the SAME five prefix candidates, no guard applied to actuals.",
+  "failure_rule": "Budget violations and abstentions counted; regret only for actually feasible selections.",
+  "no_leakage": "Neither measured latency nor measured memory of a held-out workload enters planning.",
+  "historical_data_previously_inspected": true,
+  "new_gpu_inference": false,
+  "untested_layouts_and_layer_counts": "rejected rather than silently generalized"
+}

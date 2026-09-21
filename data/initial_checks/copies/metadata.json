@@ -1,0 +1,9 @@
+{
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "gpu": "Tesla T4",
+  "repeats": 50,
+  "warmup": 5,
+  "buffers": "preallocated; no allocation or pinning inside timed interval",
+  "timing_caveat": "Event spans can include submission/staging stalls, especially pageable memory. Wall spans include host/event/sync overhead. No overlap or raw wire-rate claim."
+}

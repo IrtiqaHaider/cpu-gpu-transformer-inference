@@ -1,0 +1,107 @@
+{
+  "expected_cases": 23,
+  "complete_cases": 23,
+  "failures": [],
+  "complete": true,
+  "scope": "One session, two reverse-order blocks; no refitting.",
+  "primary_cases": 20,
+  "primary_generation_trials": 200,
+  "control_generation_trials": 30,
+  "memory_median_ape_pct_gpu_only": 0.6895247862950371,
+  "memory_worst_ape_pct_gpu_only": 1.8695316435186404,
+  "prediction_metrics": [
+    {
+      "variant": "compute",
+      "target": "prefill_ms",
+      "median_ape_pct": 10.407141737649152,
+      "worst_ape_pct": 24.721174850059867
+    },
+    {
+      "variant": "compute",
+      "target": "ttft_ms",
+      "median_ape_pct": 13.862914538044057,
+      "worst_ape_pct": 46.026595087007635
+    },
+    {
+      "variant": "compute",
+      "target": "decode_tpot_ms",
+      "median_ape_pct": 10.679299162955658,
+      "worst_ape_pct": 49.820718714167754
+    },
+    {
+      "variant": "compute",
+      "target": "generation_ms",
+      "median_ape_pct": 11.694773768716493,
+      "worst_ape_pct": 42.789223185114444
+    },
+    {
+      "variant": "compute_transfer",
+      "target": "prefill_ms",
+      "median_ape_pct": 10.74918253044229,
+      "worst_ape_pct": 24.684920051936345
+    },
+    {
+      "variant": "compute_transfer",
+      "target": "ttft_ms",
+      "median_ape_pct": 13.57446879351215,
+      "worst_ape_pct": 46.00735127192017
+    },
+    {
+      "variant": "compute_transfer",
+      "target": "decode_tpot_ms",
+      "median_ape_pct": 10.047647071283393,
+      "worst_ape_pct": 49.85422778532522
+    },
+    {
+      "variant": "compute_transfer",
+      "target": "generation_ms",
+      "median_ape_pct": 11.092608667389348,
+      "worst_ape_pct": 42.8374973905389
+    }
+  ],
+  "policy_metrics": [
+    {
+      "policy": "max_gpu",
+      "decisions": 32,
+      "budget_violations": 0,
+      "abstentions": 0,
+      "median_feasible_regret_pct": 0.0,
+      "worst_feasible_regret_pct": 239.54777807305683
+    },
+    {
+      "policy": "compute",
+      "decisions": 32,
+      "budget_violations": 0,
+      "abstentions": 0,
+      "median_feasible_regret_pct": 0.0,
+      "worst_feasible_regret_pct": 239.54777807305683
+    },
+    {
+      "policy": "compute_transfer",
+      "decisions": 32,
+      "budget_violations": 0,
+      "abstentions": 0,
+      "median_feasible_regret_pct": 0.0,
+      "worst_feasible_regret_pct": 239.54777807305683
+    }
+  ],
+  "runtime_differences": [
+    [],
+    []
+  ],
+  "timing_distributions_retained": true,
+  "source_seal": {
+    "status": "verified",
+    "seal_sha256": "060f6602b0ae5210b8ca9a4fc4993df91d800f4d0ede4ae81ed90f7a99713d84",
+    "protocol_sha256": "85f09591ee0d1b4df28d50cba89af5360ef8b57517dfddc87b29d2694436be71",
+    "new_gpu_inference": false
+  },
+  "limitations": [
+    "Only four new prompt/batch workload shapes at output length 32.",
+    "Two blocks are not independent sessions; ten trials per setting do not establish stable p95.",
+    "Historical controls diagnose environment changes but never rescale frozen predictions.",
+    "Peak allocated-memory budgets are synthetic, not enforced physical device limits.",
+    "Best measured feasible reference is restricted to the five supported prefix candidates.",
+    "New measurements are now test data; any subsequent model tuning must use another future test."
+  ]
+}

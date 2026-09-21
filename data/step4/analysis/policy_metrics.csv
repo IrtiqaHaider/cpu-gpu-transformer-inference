@@ -1,0 +1,7 @@
+cpu_threads,policy,decisions,budget_violations,median_feasible_regret_pct,worst_feasible_regret_pct
+1,max_gpu,16,0,0.0,215.15237564314646
+1,compute,16,0,0.0,215.15237564314646
+1,compute_transfer,16,0,0.0,215.15237564314646
+2,max_gpu,16,0,0.0,227.0565708490714
+2,compute,16,0,0.0,227.0565708490714
+2,compute_transfer,16,0,0.0,227.0565708490714

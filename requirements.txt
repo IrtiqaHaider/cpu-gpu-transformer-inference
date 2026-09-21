@@ -1,0 +1,10 @@
+# Install an appropriate PyTorch build separately; do not replace Colab CUDA torch.
+numpy>=1.26,<3
+pandas>=2.2,<3
+scipy>=1.11,<2
+pytest>=8,<10
+huggingface-hub>=0.28,<1
+safetensors>=0.5,<1
+tokenizers>=0.21,<0.22
+transformers==4.48.3
+matplotlib>=3.8,<4

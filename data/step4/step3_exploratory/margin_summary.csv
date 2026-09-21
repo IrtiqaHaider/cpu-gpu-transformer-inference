@@ -1,0 +1,13 @@
+guard,policy,decisions,violations,median_regret_pct,worst_regret_pct
+point_only,max_gpu,32,0,0.0,0.0
+point_only,compute,32,0,0.0,0.0
+point_only,compute_transfer,32,0,0.0,0.0
+16_MiB,max_gpu,32,0,0.0,103.39515449871355
+16_MiB,compute,32,0,0.0,103.39515449871355
+16_MiB,compute_transfer,32,0,0.0,103.39515449871355
+5_percent,max_gpu,32,0,0.0,239.54777807305683
+5_percent,compute,32,0,0.0,239.54777807305683
+5_percent,compute_transfer,32,0,0.0,239.54777807305683
+original_5_percent_plus_16_MiB,max_gpu,32,0,0.0,239.54777807305683
+original_5_percent_plus_16_MiB,compute,32,0,0.0,239.54777807305683
+original_5_percent_plus_16_MiB,compute_transfer,32,0,0.0,239.54777807305683

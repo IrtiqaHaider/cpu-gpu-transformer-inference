@@ -1,0 +1,165 @@
+{
+  "schema_version": "0.1.0",
+  "variant": "compute_transfer",
+  "feature_names": [
+    "cpu_block_count",
+    "gpu_block_count",
+    "cpu_linear_work",
+    "gpu_linear_work",
+    "cpu_attention_work",
+    "gpu_attention_work",
+    "cpu_endpoint_batch",
+    "gpu_endpoint_batch",
+    "activation_boundaries",
+    "activation_payload_mib"
+  ],
+  "model_config": {
+    "vocab_size": 50257,
+    "n_positions": 1024,
+    "n_embd": 768,
+    "n_layer": 12,
+    "n_head": 12,
+    "n_inner": null,
+    "layer_norm_epsilon": 1e-05
+  },
+  "model_source": {
+    "model_id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+  },
+  "benchmark_environment": {
+    "gpu_name": "Tesla T4",
+    "torch_threads": 2,
+    "torch_interop_threads": 1,
+    "cpu_count_logical": 2,
+    "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "safetensors": "0.8.0",
+      "huggingface-hub": "0.36.2",
+      "transformers": "4.48.3"
+    },
+    "cuda_runtime": "12.8",
+    "dtype": "float32 on both devices",
+    "attention": "explicit eager causal attention"
+  },
+  "domain": {
+    "batch_size_range": [
+      1,
+      4
+    ],
+    "sequence_length_range": [
+      32,
+      512
+    ],
+    "output_lengths_seen": [
+      32
+    ],
+    "gpu_counts_seen": [
+      0,
+      3,
+      6,
+      9,
+      12
+    ],
+    "layout": "prefix"
+  },
+  "targets": {
+    "prefill_ms": {
+      "coefficients_ms": [
+        56.7315897027626,
+        6.697891443116895,
+        3560.9499310434016,
+        32.94481315526763,
+        1528.9585397932026,
+        94.58839608364951,
+        41.62901257851555,
+        2.23152215460373,
+        0.9510708083849109,
+        0.0
+      ],
+      "feature_scales": [
+        12.0,
+        12.0,
+        24576.0,
+        24576.0,
+        12582912.0,
+        12582912.0,
+        4.0,
+        4.0,
+        2.0,
+        12.0
+      ],
+      "target_scale_ms": 214.44498099999998,
+      "training_rows": 45,
+      "design_rank": 10,
+      "feature_count": 10,
+      "ridge": 1e-06
+    },
+    "ttft_ms": {
+      "coefficients_ms": [
+        56.605284185593476,
+        6.191301312574486,
+        3617.959122080707,
+        31.77890396515721,
+        1477.8632822690167,
+        154.85452267861945,
+        37.58089090643341,
+        2.840062016282752,
+        0.6797709997153468,
+        0.0
+      ],
+      "feature_scales": [
+        12.0,
+        12.0,
+        24576.0,
+        24576.0,
+        12582912.0,
+        12582912.0,
+        4.0,
+        4.0,
+        2.0,
+        12.0
+      ],
+      "target_scale_ms": 227.3373885,
+      "training_rows": 45,
+      "design_rank": 10,
+      "feature_count": 10,
+      "ridge": 1e-06
+    },
+    "decode_tpot_ms": {
+      "coefficients_ms": [
+        27.705716334294483,
+        8.000185165779651,
+        28.477174763814933,
+        1.7778002977908223,
+        54.219032697203446,
+        0.0,
+        30.080443415604392,
+        0.1745316488436583,
+        0.0,
+        89.86893089578574
+      ],
+      "feature_scales": [
+        12.0,
+        12.0,
+        48.0,
+        48.0,
+        25344.0,
+        25344.0,
+        4.0,
+        4.0,
+        2.0,
+        1.0
+      ],
+      "target_scale_ms": 30.964749306451615,
+      "training_rows": 45,
+      "design_rank": 9,
+      "feature_count": 10,
+      "ridge": 1e-06
+    }
+  },
+  "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee.",
+  "calibration_input_sha256": "7c099f37a5b0397db931e2f2ed383548ccb1798022445efb8be092a333805469"
+}

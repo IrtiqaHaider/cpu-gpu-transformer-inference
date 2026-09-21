@@ -1,0 +1,31 @@
+{
+  "input_filename": "run_20260919T162736Z_export.zip",
+  "input_sha256": "7c099f37a5b0397db931e2f2ed383548ccb1798022445efb8be092a333805469",
+  "source_folder": "main",
+  "member_sha256": {
+    "summary.csv": "9c07698dbef92c62f2f66ca2d25fc3859ed6eb4709429c825610b1cf692d3f86",
+    "trials.csv": "576451845935a9446df27c9e2d3cbe1e7815f5c8dc593cb7338a587c19ec42e2",
+    "metadata.json": "e1c648a034c047d0378eab1972c3c87366c6ac8fd282f18517a420e7e3a931ae"
+  },
+  "configuration_rows": 45,
+  "raw_trials_checked": 450,
+  "workload_groups": 9,
+  "all_trial_rows_retained_in_medians": true,
+  "summary_statistics_verified": true,
+  "token_accounting_verified": true,
+  "layouts_used_for_fitting": false,
+  "profiles_used_as_features": false,
+  "memory_measurements_used_as_latency_features": false,
+  "explanation": "Only the 45-case main sweep is used; the 12 layout records remain separate, not a new blind test.",
+  "code_sha256": {
+    "__init__.py": "a21491ca194a2505b49d8f9ca5bc0b391b1534c0fdc7582bf9afb29e1c6c666a",
+    "cost_model.py": "26b55e90071884733dcc10092652d843315e3fe96792cb85547892c5b1035ab5",
+    "fit.py": "1f535115d86323c8efdaaad6ca3e6aac9a43294e0595ed7caf2661fd19c373e9"
+  },
+  "fitting_environment": {
+    "python": "3.13.15",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.16.3"
+  }
+}

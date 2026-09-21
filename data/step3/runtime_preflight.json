@@ -1,0 +1,58 @@
+{
+  "status": "ok",
+  "seal_sha256": "060f6602b0ae5210b8ca9a4fc4993df91d800f4d0ede4ae81ed90f7a99713d84",
+  "runtime": {
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "python": "3.13.15",
+    "cpu_count_logical": 2,
+    "torch_threads": 2,
+    "torch_interop_threads": 1,
+    "cuda_runtime": "12.8",
+    "cuda_available": true,
+    "gpu_name": "Tesla T4",
+    "gpu_total_bytes": 15637086208,
+    "nvidia_smi": "Sat Sep 19 20:23:50 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |\n| N/A   37C    P8             15W /   70W |       3MiB /  15360MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|  No running processes found                                                             |\n+-----------------------------------------------------------------------------------------+",
+    "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.32\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "safetensors": "0.8.0",
+      "huggingface-hub": "0.36.2",
+      "transformers": "4.48.3"
+    },
+    "model": {
+      "model_id": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+    },
+    "model_config": {
+      "vocab_size": 50257,
+      "n_positions": 1024,
+      "n_embd": 768,
+      "n_layer": 12,
+      "n_head": 12,
+      "n_inner": null,
+      "layer_norm_epsilon": 1e-05
+    },
+    "arguments": {
+      "phase": "step3",
+      "seal_sha256": "060f6602b0ae5210b8ca9a4fc4993df91d800f4d0ede4ae81ed90f7a99713d84"
+    },
+    "dtype": "float32 on both devices",
+    "attention": "explicit eager causal attention",
+    "timing_scope": "Model work + input transfer + greedy selection + CPU token delivery; no tokenization, downloads or placement",
+    "profile_scope": "Separately synchronized wall timings; diagnostic only, not raw PCIe DMA",
+    "padding": "unsupported; equal-length unpadded synthetic token IDs",
+    "eos_policy": "ignored; fixed number of output tokens for every run",
+    "boot_id": "a70c1bd4-11a0-4c09-b8c7-9c1724d6ba4d",
+    "created_utc": "2026-09-19T20:23:50.818443+00:00",
+    "load_average": [
+      1.14013671875,
+      0.5361328125,
+      0.2451171875
+    ]
+  },
+  "session_fingerprint": "628b3df1db5af91434e37b39971534ce1d62b61119bdade4e2f8f45b507bc87e",
+  "differences_from_calibration": [],
+  "note": "CPU/software differences are retained as domain shift; they do not trigger calibration."
+}

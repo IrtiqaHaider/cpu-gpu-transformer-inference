@@ -1,0 +1,3899 @@
+[
+  {
+    "fold": 0,
+    "held_out_group": "1/128/32",
+    "training_case_indices": [
+      23,
+      3,
+      10,
+      16,
+      33,
+      38,
+      9,
+      2,
+      27,
+      21,
+      44,
+      19,
+      34,
+      7,
+      4,
+      30,
+      22,
+      26,
+      29,
+      28,
+      42,
+      15,
+      17,
+      6,
+      8,
+      39,
+      12,
+      37,
+      18,
+      24,
+      25,
+      11,
+      5,
+      36,
+      40,
+      1,
+      43,
+      41,
+      35,
+      32
+    ],
+    "held_out_case_indices": [
+      14,
+      31,
+      20,
+      13,
+      0
+    ],
+    "memory_model": {
+      "schema_version": "0.2.0",
+      "model_config": {
+        "vocab_size": 50257,
+        "n_positions": 1024,
+        "n_embd": 768,
+        "n_layer": 12,
+        "n_head": 12,
+        "n_inner": null,
+        "layer_norm_epsilon": 1e-05
+      },
+      "model_source": {
+        "model_id": "openai-community/gpt2",
+        "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+      },
+      "feature_names": [
+        "gpu_active",
+        "prefill_hidden_mib",
+        "prefill_attention_mib",
+        "final_gpu_kv_mib",
+        "last_position_logits_mib"
+      ],
+      "feature_scales": [
+        1.0,
+        6.0,
+        48.0,
+        152.71875,
+        1.0
+      ],
+      "coefficients_mib": [
+        12.894521616351293,
+        88.05626762585591,
+        9.71341927709507,
+        49.421313684759426,
+        0.4156662517972613
+      ],
+      "design_rank": 5,
+      "ridge": 1e-06,
+      "training_rows": 40,
+      "training_gpu_rows": 32,
+      "domain": {
+        "batch_size_range": [
+          1,
+          4
+        ],
+        "sequence_length_range": [
+          32,
+          512
+        ],
+        "output_lengths_seen": [
+          32
+        ],
+        "gpu_counts_seen": [
+          0,
+          3,
+          6,
+          9,
+          12
+        ],
+        "layout": "prefix"
+      },
+      "scope": "Peak PyTorch allocated bytes across the original timed case, NOT total device memory.",
+      "residual": "Empirical temporary/workspace/allocator/cache-growth overhead; not a causal decomposition."
+    },
+    "latency_models": {
+      "compute": {
+        "schema_version": "0.1.0",
+        "variant": "compute",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              58.37351878693249,
+              7.576551346084592,
+              3614.1669093242426,
+              40.42886773466119,
+              1481.7612365752027,
+              86.34467304120402,
+              35.89986346412866,
+              0.5764657034763999
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 244.74875724999998,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              57.67817178860766,
+              7.520850809665859,
+              3640.345222845228,
+              49.06679243561003,
+              1454.4326007996729,
+              137.3185437331931,
+              33.89737874262353,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 256.66890675,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              26.311330747118138,
+              8.042091298460454,
+              32.90331312782654,
+              0.0,
+              54.93081101144278,
+              0.0,
+              26.513165181102536,
+              1.9702910631572057
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 31.78825881451613,
+            "training_rows": 40,
+            "design_rank": 7,
+            "feature_count": 8,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      },
+      "compute_transfer": {
+        "schema_version": "0.1.0",
+        "variant": "compute_transfer",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch",
+          "activation_boundaries",
+          "activation_payload_mib"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              57.30877040431353,
+              7.563498643419026,
+              3609.4857734385664,
+              40.497561119836995,
+              1486.381900218068,
+              86.2986199330277,
+              38.19960452492751,
+              0.5824813878624895,
+              0.5597770988292536,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 244.74875724999998,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              56.48464613124417,
+              7.507593321717434,
+              3634.869835037462,
+              49.20588832590793,
+              1459.8315883945615,
+              137.19243243838392,
+              36.51153928081465,
+              0.0,
+              0.6326014630384712,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 256.66890675,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              26.412096390266342,
+              8.007535561002808,
+              29.459498949295252,
+              1.184315892734722,
+              54.6239316678647,
+              0.0,
+              29.898593720286666,
+              0.7452211195516169,
+              0.0,
+              94.7044691150591
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0,
+              2.0,
+              1.0
+            ],
+            "target_scale_ms": 31.78825881451613,
+            "training_rows": 40,
+            "design_rank": 9,
+            "feature_count": 10,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      }
+    }
+  },
+  {
+    "fold": 1,
+    "held_out_group": "1/32/32",
+    "training_case_indices": [
+      14,
+      31,
+      20,
+      13,
+      0,
+      38,
+      9,
+      2,
+      27,
+      21,
+      44,
+      19,
+      34,
+      7,
+      4,
+      30,
+      22,
+      26,
+      29,
+      28,
+      42,
+      15,
+      17,
+      6,
+      8,
+      39,
+      12,
+      37,
+      18,
+      24,
+      25,
+      11,
+      5,
+      36,
+      40,
+      1,
+      43,
+      41,
+      35,
+      32
+    ],
+    "held_out_case_indices": [
+      23,
+      3,
+      10,
+      16,
+      33
+    ],
+    "memory_model": {
+      "schema_version": "0.2.0",
+      "model_config": {
+        "vocab_size": 50257,
+        "n_positions": 1024,
+        "n_embd": 768,
+        "n_layer": 12,
+        "n_head": 12,
+        "n_inner": null,
+        "layer_norm_epsilon": 1e-05
+      },
+      "model_source": {
+        "model_id": "openai-community/gpt2",
+        "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+      },
+      "feature_names": [
+        "gpu_active",
+        "prefill_hidden_mib",
+        "prefill_attention_mib",
+        "final_gpu_kv_mib",
+        "last_position_logits_mib"
+      ],
+      "feature_scales": [
+        1.0,
+        6.0,
+        48.0,
+        152.71875,
+        1.0
+      ],
+      "coefficients_mib": [
+        12.850643292463417,
+        84.2675534726391,
+        13.032054341844535,
+        49.42295578770128,
+        1.1036084064103096
+      ],
+      "design_rank": 5,
+      "ridge": 1e-06,
+      "training_rows": 40,
+      "training_gpu_rows": 32,
+      "domain": {
+        "batch_size_range": [
+          1,
+          4
+        ],
+        "sequence_length_range": [
+          32,
+          512
+        ],
+        "output_lengths_seen": [
+          32
+        ],
+        "gpu_counts_seen": [
+          0,
+          3,
+          6,
+          9,
+          12
+        ],
+        "layout": "prefix"
+      },
+      "scope": "Peak PyTorch allocated bytes across the original timed case, NOT total device memory.",
+      "residual": "Empirical temporary/workspace/allocator/cache-growth overhead; not a causal decomposition."
+    },
+    "latency_models": {
+      "compute": {
+        "schema_version": "0.1.0",
+        "variant": "compute",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              58.208109314394044,
+              4.597354303049992,
+              3566.9310536075145,
+              46.5780644034287,
+              1522.3777643365293,
+              85.32648871302564,
+              37.72578260714315,
+              3.61676254723447
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 284.72297449999996,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              57.43197473797467,
+              3.290532179654886,
+              3614.0774098413153,
+              58.41574409799393,
+              1481.7643077995858,
+              133.56623738247916,
+              37.176671802595834,
+              4.403518655442943
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 286.4322625,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              26.155372633242152,
+              8.042732448371526,
+              32.818359840987405,
+              0.0,
+              55.90472524356602,
+              0.0,
+              26.38127091681354,
+              1.9676548450145162
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 33.116985145161294,
+            "training_rows": 40,
+            "design_rank": 7,
+            "feature_count": 8,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      },
+      "compute_transfer": {
+        "schema_version": "0.1.0",
+        "variant": "compute_transfer",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch",
+          "activation_boundaries",
+          "activation_payload_mib"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              54.04159229472033,
+              4.581894686143662,
+              3561.046998021193,
+              46.739855412197734,
+              1529.0626466942615,
+              85.19169994257787,
+              44.35251388114138,
+              3.6072162692359,
+              2.0050164150906844,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 284.72297449999996,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              56.24742878325381,
+              3.2856891420086716,
+              3612.144458407569,
+              58.47454521993436,
+              1483.8958455830627,
+              133.50852330722392,
+              39.079185683169726,
+              4.4005607414687296,
+              0.574687902449405,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 286.4322625,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              26.25642448240569,
+              8.010728261957782,
+              29.43871750932241,
+              1.0979345522472919,
+              55.59299667707834,
+              0.0,
+              29.707983741464588,
+              0.8286683207565031,
+              0.0,
+              91.63697485755374
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0,
+              2.0,
+              1.0
+            ],
+            "target_scale_ms": 33.116985145161294,
+            "training_rows": 40,
+            "design_rank": 9,
+            "feature_count": 10,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      }
+    }
+  },
+  {
+    "fold": 2,
+    "held_out_group": "1/512/32",
+    "training_case_indices": [
+      23,
+      3,
+      10,
+      16,
+      33,
+      14,
+      31,
+      20,
+      13,
+      0,
+      44,
+      19,
+      34,
+      7,
+      4,
+      30,
+      22,
+      26,
+      29,
+      28,
+      42,
+      15,
+      17,
+      6,
+      8,
+      39,
+      12,
+      37,
+      18,
+      24,
+      25,
+      11,
+      5,
+      36,
+      40,
+      1,
+      43,
+      41,
+      35,
+      32
+    ],
+    "held_out_case_indices": [
+      38,
+      9,
+      2,
+      27,
+      21
+    ],
+    "memory_model": {
+      "schema_version": "0.2.0",
+      "model_config": {
+        "vocab_size": 50257,
+        "n_positions": 1024,
+        "n_embd": 768,
+        "n_layer": 12,
+        "n_head": 12,
+        "n_inner": null,
+        "layer_norm_epsilon": 1e-05
+      },
+      "model_source": {
+        "model_id": "openai-community/gpt2",
+        "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+      },
+      "feature_names": [
+        "gpu_active",
+        "prefill_hidden_mib",
+        "prefill_attention_mib",
+        "final_gpu_kv_mib",
+        "last_position_logits_mib"
+      ],
+      "feature_scales": [
+        1.0,
+        6.0,
+        48.0,
+        152.71875,
+        1.0
+      ],
+      "coefficients_mib": [
+        10.701182523583686,
+        87.30347758870359,
+        10.23846115217229,
+        47.973018698365884,
+        4.42482709661171
+      ],
+      "design_rank": 5,
+      "ridge": 1e-06,
+      "training_rows": 40,
+      "training_gpu_rows": 32,
+      "domain": {
+        "batch_size_range": [
+          1,
+          4
+        ],
+        "sequence_length_range": [
+          32,
+          512
+        ],
+        "output_lengths_seen": [
+          32
+        ],
+        "gpu_counts_seen": [
+          0,
+          3,
+          6,
+          9,
+          12
+        ],
+        "layout": "prefix"
+      },
+      "scope": "Peak PyTorch allocated bytes across the original timed case, NOT total device memory.",
+      "residual": "Empirical temporary/workspace/allocator/cache-growth overhead; not a causal decomposition."
+    },
+    "latency_models": {
+      "compute": {
+        "schema_version": "0.1.0",
+        "variant": "compute",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              60.27571510995108,
+              7.077876360797332,
+              3476.2640169340584,
+              20.115089712568864,
+              1857.5507606280155,
+              131.04825736259104,
+              38.32128904081026,
+              2.3889555430499945
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 199.18289275,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              60.435657941437924,
+              6.244438000954041,
+              3499.097942008013,
+              29.25663946303133,
+              1927.7910547410738,
+              161.27451499606596,
+              35.0702924755152,
+              2.922928508206081
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 208.04707525,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              26.14895721900448,
+              8.157312214375624,
+              34.33479105992116,
+              0.0,
+              51.31435504512399,
+              0.05008439081377945,
+              26.880065423418266,
+              1.820537141990305
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 31.78825881451613,
+            "training_rows": 40,
+            "design_rank": 7,
+            "feature_count": 8,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      },
+      "compute_transfer": {
+        "schema_version": "0.1.0",
+        "variant": "compute_transfer",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch",
+          "activation_boundaries",
+          "activation_payload_mib"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              58.76804954357176,
+              7.063212811958743,
+              3470.2119447308783,
+              20.25747968191804,
+              1863.8765884081101,
+              130.91793293712908,
+              41.64592383719046,
+              2.3892123509003516,
+              0.7909564020622545,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 199.18289275,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              58.84746993145184,
+              6.2279037440411145,
+              3492.2507141416827,
+              29.456853809130497,
+              1934.946089364269,
+              161.08195361045128,
+              38.62341755518867,
+              2.921789963830178,
+              0.8399871858299441,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 208.04707525,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              26.195313146234064,
+              8.12658491916763,
+              31.258488891526518,
+              0.24963800220810867,
+              51.01472648051102,
+              0.08622396210626561,
+              29.976882714614767,
+              1.5312441820457867,
+              0.0,
+              69.58261360020687
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0,
+              2.0,
+              1.0
+            ],
+            "target_scale_ms": 31.78825881451613,
+            "training_rows": 40,
+            "design_rank": 9,
+            "feature_count": 10,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      }
+    }
+  },
+  {
+    "fold": 3,
+    "held_out_group": "2/128/32",
+    "training_case_indices": [
+      23,
+      3,
+      10,
+      16,
+      33,
+      14,
+      31,
+      20,
+      13,
+      0,
+      38,
+      9,
+      2,
+      27,
+      21,
+      44,
+      19,
+      34,
+      7,
+      4,
+      42,
+      15,
+      17,
+      6,
+      8,
+      39,
+      12,
+      37,
+      18,
+      24,
+      25,
+      11,
+      5,
+      36,
+      40,
+      1,
+      43,
+      41,
+      35,
+      32
+    ],
+    "held_out_case_indices": [
+      30,
+      22,
+      26,
+      29,
+      28
+    ],
+    "memory_model": {
+      "schema_version": "0.2.0",
+      "model_config": {
+        "vocab_size": 50257,
+        "n_positions": 1024,
+        "n_embd": 768,
+        "n_layer": 12,
+        "n_head": 12,
+        "n_inner": null,
+        "layer_norm_epsilon": 1e-05
+      },
+      "model_source": {
+        "model_id": "openai-community/gpt2",
+        "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+      },
+      "feature_names": [
+        "gpu_active",
+        "prefill_hidden_mib",
+        "prefill_attention_mib",
+        "final_gpu_kv_mib",
+        "last_position_logits_mib"
+      ],
+      "feature_scales": [
+        1.0,
+        6.0,
+        48.0,
+        152.71875,
+        1.0
+      ],
+      "coefficients_mib": [
+        12.706416116125967,
+        91.42464858491675,
+        7.00198697141427,
+        48.594102405002644,
+        0.5602384161000648
+      ],
+      "design_rank": 5,
+      "ridge": 1e-06,
+      "training_rows": 40,
+      "training_gpu_rows": 32,
+      "domain": {
+        "batch_size_range": [
+          1,
+          4
+        ],
+        "sequence_length_range": [
+          32,
+          512
+        ],
+        "output_lengths_seen": [
+          32
+        ],
+        "gpu_counts_seen": [
+          0,
+          3,
+          6,
+          9,
+          12
+        ],
+        "layout": "prefix"
+      },
+      "scope": "Peak PyTorch allocated bytes across the original timed case, NOT total device memory.",
+      "residual": "Empirical temporary/workspace/allocator/cache-growth overhead; not a causal decomposition."
+    },
+    "latency_models": {
+      "compute": {
+        "schema_version": "0.1.0",
+        "variant": "compute",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              59.300914899100604,
+              6.703010262424904,
+              3546.1878796981196,
+              45.95856071309594,
+              1540.0794167486345,
+              82.33870035056873,
+              36.32919787733761,
+              1.4824838766370203
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 207.13469999999998,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              59.006381009522,
+              5.836870878464582,
+              3608.5620349778505,
+              65.41340665783225,
+              1483.4309216599952,
+              123.57707691007847,
+              31.564791502803754,
+              1.3745776882291412
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 223.97324375,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              28.242544417203774,
+              7.969825886661337,
+              32.18932640494728,
+              0.0,
+              53.516198518403336,
+              0.006376392913623423,
+              27.33892982541077,
+              2.0047799994351103
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 31.78825881451613,
+            "training_rows": 40,
+            "design_rank": 7,
+            "feature_count": 8,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      },
+      "compute_transfer": {
+        "schema_version": "0.1.0",
+        "variant": "compute_transfer",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch",
+          "activation_boundaries",
+          "activation_payload_mib"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              58.121456011084184,
+              6.691361827971693,
+              3540.4472656981775,
+              46.066727288812245,
+              1545.7509157365885,
+              82.25352823298444,
+              38.984332871538676,
+              1.4831922418287096,
+              0.6282386831130229,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 207.13469999999998,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              58.248591398629706,
+              5.828445794376174,
+              3604.5581924204043,
+              65.53554708026678,
+              1487.3653383770045,
+              123.46631267726634,
+              33.30127455762913,
+              1.3732887212717597,
+              0.40788127204417385,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 223.97324375,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              28.296013805005096,
+              7.94708861681594,
+              29.84231931360455,
+              0.8988489626984312,
+              53.27537973743527,
+              0.043695574035395104,
+              29.681223577002406,
+              1.0599446996339277,
+              0.0,
+              67.11198236235664
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0,
+              2.0,
+              1.0
+            ],
+            "target_scale_ms": 31.78825881451613,
+            "training_rows": 40,
+            "design_rank": 9,
+            "feature_count": 10,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      }
+    }
+  },
+  {
+    "fold": 4,
+    "held_out_group": "2/32/32",
+    "training_case_indices": [
+      23,
+      3,
+      10,
+      16,
+      33,
+      14,
+      31,
+      20,
+      13,
+      0,
+      38,
+      9,
+      2,
+      27,
+      21,
+      30,
+      22,
+      26,
+      29,
+      28,
+      42,
+      15,
+      17,
+      6,
+      8,
+      39,
+      12,
+      37,
+      18,
+      24,
+      25,
+      11,
+      5,
+      36,
+      40,
+      1,
+      43,
+      41,
+      35,
+      32
+    ],
+    "held_out_case_indices": [
+      44,
+      19,
+      34,
+      7,
+      4
+    ],
+    "memory_model": {
+      "schema_version": "0.2.0",
+      "model_config": {
+        "vocab_size": 50257,
+        "n_positions": 1024,
+        "n_embd": 768,
+        "n_layer": 12,
+        "n_head": 12,
+        "n_inner": null,
+        "layer_norm_epsilon": 1e-05
+      },
+      "model_source": {
+        "model_id": "openai-community/gpt2",
+        "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+      },
+      "feature_names": [
+        "gpu_active",
+        "prefill_hidden_mib",
+        "prefill_attention_mib",
+        "final_gpu_kv_mib",
+        "last_position_logits_mib"
+      ],
+      "feature_scales": [
+        1.0,
+        6.0,
+        48.0,
+        152.71875,
+        1.0
+      ],
+      "coefficients_mib": [
+        12.581083485694533,
+        83.52627109897051,
+        13.714171328821614,
+        49.23397999001935,
+        1.8034589806172263
+      ],
+      "design_rank": 5,
+      "ridge": 1e-06,
+      "training_rows": 40,
+      "training_gpu_rows": 32,
+      "domain": {
+        "batch_size_range": [
+          1,
+          4
+        ],
+        "sequence_length_range": [
+          32,
+          512
+        ],
+        "output_lengths_seen": [
+          32
+        ],
+        "gpu_counts_seen": [
+          0,
+          3,
+          6,
+          9,
+          12
+        ],
+        "layout": "prefix"
+      },
+      "scope": "Peak PyTorch allocated bytes across the original timed case, NOT total device memory.",
+      "residual": "Empirical temporary/workspace/allocator/cache-growth overhead; not a causal decomposition."
+    },
+    "latency_models": {
+      "compute": {
+        "schema_version": "0.1.0",
+        "variant": "compute",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              57.588390498907216,
+              6.5334441024534815,
+              3569.5592097722524,
+              35.68975324921419,
+              1526.494152069945,
+              92.49756502340844,
+              34.050882472739175,
+              2.0191786591466996
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 284.72297449999996,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              58.38316331856893,
+              5.921574843617572,
+              3629.2113933989153,
+              36.22213934907272,
+              1465.7307346645198,
+              151.3330559952566,
+              30.050605017273444,
+              2.581666537882514
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 286.4322625,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              28.425281791065018,
+              7.998011906031411,
+              33.52035694258364,
+              0.0,
+              49.49804049291831,
+              0.03700552656536301,
+              28.361384176853157,
+              1.9873647090796447
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 32.293475637096776,
+            "training_rows": 40,
+            "design_rank": 7,
+            "feature_count": 8,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      },
+      "compute_transfer": {
+        "schema_version": "0.1.0",
+        "variant": "compute_transfer",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch",
+          "activation_boundaries",
+          "activation_payload_mib"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              55.02922100137908,
+              6.505667054806055,
+              3559.592687827228,
+              35.94251928902972,
+              1536.2499199817203,
+              92.30225756398346,
+              39.66352033388455,
+              2.019975494171381,
+              1.3759262370750656,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 284.72297449999996,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              57.10592117009533,
+              5.906572007552564,
+              3623.8579718744377,
+              36.39769549857609,
+              1470.9670112310305,
+              151.17736716236394,
+              32.89991700290817,
+              2.5805764948085566,
+              0.6904281636078836,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 286.4322625,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              28.497559082670193,
+              7.9696876137378165,
+              30.575899344696932,
+              1.3294325078258509,
+              49.192277674299966,
+              0.0799193193653605,
+              31.305799423060442,
+              0.5995324264779317,
+              0.0,
+              88.3164043650928
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0,
+              2.0,
+              1.0
+            ],
+            "target_scale_ms": 32.293475637096776,
+            "training_rows": 40,
+            "design_rank": 9,
+            "feature_count": 10,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      }
+    }
+  },
+  {
+    "fold": 5,
+    "held_out_group": "2/512/32",
+    "training_case_indices": [
+      23,
+      3,
+      10,
+      16,
+      33,
+      14,
+      31,
+      20,
+      13,
+      0,
+      38,
+      9,
+      2,
+      27,
+      21,
+      44,
+      19,
+      34,
+      7,
+      4,
+      30,
+      22,
+      26,
+      29,
+      28,
+      39,
+      12,
+      37,
+      18,
+      24,
+      25,
+      11,
+      5,
+      36,
+      40,
+      1,
+      43,
+      41,
+      35,
+      32
+    ],
+    "held_out_case_indices": [
+      42,
+      15,
+      17,
+      6,
+      8
+    ],
+    "memory_model": {
+      "schema_version": "0.2.0",
+      "model_config": {
+        "vocab_size": 50257,
+        "n_positions": 1024,
+        "n_embd": 768,
+        "n_layer": 12,
+        "n_head": 12,
+        "n_inner": null,
+        "layer_norm_epsilon": 1e-05
+      },
+      "model_source": {
+        "model_id": "openai-community/gpt2",
+        "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+      },
+      "feature_names": [
+        "gpu_active",
+        "prefill_hidden_mib",
+        "prefill_attention_mib",
+        "final_gpu_kv_mib",
+        "last_position_logits_mib"
+      ],
+      "feature_scales": [
+        1.0,
+        6.0,
+        48.0,
+        152.71875,
+        1.0
+      ],
+      "coefficients_mib": [
+        12.570113627002204,
+        85.47140305867534,
+        12.12014662871278,
+        50.08408629269919,
+        1.1154413668059846
+      ],
+      "design_rank": 5,
+      "ridge": 1e-06,
+      "training_rows": 40,
+      "training_gpu_rows": 32,
+      "domain": {
+        "batch_size_range": [
+          1,
+          4
+        ],
+        "sequence_length_range": [
+          32,
+          512
+        ],
+        "output_lengths_seen": [
+          32
+        ],
+        "gpu_counts_seen": [
+          0,
+          3,
+          6,
+          9,
+          12
+        ],
+        "layout": "prefix"
+      },
+      "scope": "Peak PyTorch allocated bytes across the original timed case, NOT total device memory.",
+      "residual": "Empirical temporary/workspace/allocator/cache-growth overhead; not a causal decomposition."
+    },
+    "latency_models": {
+      "compute": {
+        "schema_version": "0.1.0",
+        "variant": "compute",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              58.871461319461474,
+              6.727842587612429,
+              3544.5059789455718,
+              33.611425251067104,
+              1633.537891098188,
+              91.65879028472587,
+              37.21376362774389,
+              2.1807767472816737
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 199.18289275,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              58.18372758607174,
+              6.185020131558287,
+              3599.466890888723,
+              29.27961346072895,
+              1580.902056411649,
+              162.52268690227942,
+              34.397389616395984,
+              2.991127436485668
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 208.04707525,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              27.705931495256344,
+              8.053933188904201,
+              30.365590357110207,
+              0.1332692112240756,
+              56.9670617022689,
+              0.0,
+              28.6447594121013,
+              1.8541001584589536
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 30.00714748387097,
+            "training_rows": 40,
+            "design_rank": 7,
+            "feature_count": 8,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      },
+      "compute_transfer": {
+        "schema_version": "0.1.0",
+        "variant": "compute_transfer",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch",
+          "activation_boundaries",
+          "activation_payload_mib"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              56.77334319498416,
+              6.707749151616276,
+              3536.0226970017416,
+              33.795528644553684,
+              1642.6850217719584,
+              91.51782517235362,
+              41.84816378442658,
+              2.1814716139060994,
+              1.100125133995971,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 199.18289275,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              56.465633979134026,
+              6.167274440917857,
+              3592.015181398758,
+              29.49094918663245,
+              1588.9172217799376,
+              162.32759176011382,
+              38.24702741066738,
+              2.990019843659359,
+              0.9081455408640491,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 208.04707525,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              27.835376462789217,
+              8.004515106287183,
+              25.50093449646486,
+              1.9055311989284425,
+              56.66311452130035,
+              0.04916995438722848,
+              33.37338631220169,
+              0.0,
+              0.0,
+              136.73574469712162
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0,
+              2.0,
+              1.0
+            ],
+            "target_scale_ms": 30.00714748387097,
+            "training_rows": 40,
+            "design_rank": 9,
+            "feature_count": 10,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      }
+    }
+  },
+  {
+    "fold": 6,
+    "held_out_group": "4/128/32",
+    "training_case_indices": [
+      23,
+      3,
+      10,
+      16,
+      33,
+      14,
+      31,
+      20,
+      13,
+      0,
+      38,
+      9,
+      2,
+      27,
+      21,
+      44,
+      19,
+      34,
+      7,
+      4,
+      30,
+      22,
+      26,
+      29,
+      28,
+      42,
+      15,
+      17,
+      6,
+      8,
+      39,
+      12,
+      37,
+      18,
+      24,
+      1,
+      43,
+      41,
+      35,
+      32
+    ],
+    "held_out_case_indices": [
+      25,
+      11,
+      5,
+      36,
+      40
+    ],
+    "memory_model": {
+      "schema_version": "0.2.0",
+      "model_config": {
+        "vocab_size": 50257,
+        "n_positions": 1024,
+        "n_embd": 768,
+        "n_layer": 12,
+        "n_head": 12,
+        "n_inner": null,
+        "layer_norm_epsilon": 1e-05
+      },
+      "model_source": {
+        "model_id": "openai-community/gpt2",
+        "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+      },
+      "feature_names": [
+        "gpu_active",
+        "prefill_hidden_mib",
+        "prefill_attention_mib",
+        "final_gpu_kv_mib",
+        "last_position_logits_mib"
+      ],
+      "feature_scales": [
+        1.0,
+        6.0,
+        48.0,
+        152.71875,
+        1.0
+      ],
+      "coefficients_mib": [
+        13.246828228321506,
+        59.29506764603803,
+        38.47217340075578,
+        46.375572903066576,
+        2.2886021956961793
+      ],
+      "design_rank": 5,
+      "ridge": 1e-06,
+      "training_rows": 40,
+      "training_gpu_rows": 32,
+      "domain": {
+        "batch_size_range": [
+          1,
+          4
+        ],
+        "sequence_length_range": [
+          32,
+          512
+        ],
+        "output_lengths_seen": [
+          32
+        ],
+        "gpu_counts_seen": [
+          0,
+          3,
+          6,
+          9,
+          12
+        ],
+        "layout": "prefix"
+      },
+      "scope": "Peak PyTorch allocated bytes across the original timed case, NOT total device memory.",
+      "residual": "Empirical temporary/workspace/allocator/cache-growth overhead; not a causal decomposition."
+    },
+    "latency_models": {
+      "compute": {
+        "schema_version": "0.1.0",
+        "variant": "compute",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              57.21907470558317,
+              7.837215068376878,
+              3593.2768812689187,
+              0.0,
+              1500.508710313103,
+              123.99368259106768,
+              39.56506833098571,
+              2.597936101283573
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 199.18289275,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              54.95819947462981,
+              7.466746057129201,
+              3726.151741189847,
+              0.0,
+              1383.0533425478795,
+              180.8032634831848,
+              34.75261552260696,
+              2.6718691194025803
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 208.04707525,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              28.643595213840776,
+              8.047280318739643,
+              28.273859531107163,
+              0.5660632841772255,
+              55.13836335781225,
+              0.0,
+              27.44902326141122,
+              1.3908995531746748
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 30.00714748387097,
+            "training_rows": 40,
+            "design_rank": 7,
+            "feature_count": 8,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      },
+      "compute_transfer": {
+        "schema_version": "0.1.0",
+        "variant": "compute_transfer",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch",
+          "activation_boundaries",
+          "activation_payload_mib"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              56.34419427344887,
+              7.829894585003545,
+              3588.847973714046,
+              0.0,
+              1504.8874250852311,
+              124.01294466756377,
+              41.576807460307954,
+              2.603009874325465,
+              0.4669654007568465,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 199.18289275,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              54.820354707388255,
+              7.465607769415479,
+              3725.386255861752,
+              0.0,
+              1383.8044312493064,
+              180.80631351729474,
+              35.075573353135205,
+              2.6726379781834506,
+              0.07442275211160823,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 208.04707525,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              28.71490390510759,
+              8.01658790389584,
+              25.516338289555552,
+              1.9199435964718539,
+              54.864693858997825,
+              0.0014003078465130493,
+              30.169780648995395,
+              0.0,
+              0.0,
+              84.86012290031421
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0,
+              2.0,
+              1.0
+            ],
+            "target_scale_ms": 30.00714748387097,
+            "training_rows": 40,
+            "design_rank": 9,
+            "feature_count": 10,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      }
+    }
+  },
+  {
+    "fold": 7,
+    "held_out_group": "4/32/32",
+    "training_case_indices": [
+      23,
+      3,
+      10,
+      16,
+      33,
+      14,
+      31,
+      20,
+      13,
+      0,
+      38,
+      9,
+      2,
+      27,
+      21,
+      44,
+      19,
+      34,
+      7,
+      4,
+      30,
+      22,
+      26,
+      29,
+      28,
+      42,
+      15,
+      17,
+      6,
+      8,
+      25,
+      11,
+      5,
+      36,
+      40,
+      1,
+      43,
+      41,
+      35,
+      32
+    ],
+    "held_out_case_indices": [
+      39,
+      12,
+      37,
+      18,
+      24
+    ],
+    "memory_model": {
+      "schema_version": "0.2.0",
+      "model_config": {
+        "vocab_size": 50257,
+        "n_positions": 1024,
+        "n_embd": 768,
+        "n_layer": 12,
+        "n_head": 12,
+        "n_inner": null,
+        "layer_norm_epsilon": 1e-05
+      },
+      "model_source": {
+        "model_id": "openai-community/gpt2",
+        "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+      },
+      "feature_names": [
+        "gpu_active",
+        "prefill_hidden_mib",
+        "prefill_attention_mib",
+        "final_gpu_kv_mib",
+        "last_position_logits_mib"
+      ],
+      "feature_scales": [
+        1.0,
+        6.0,
+        48.0,
+        152.71875,
+        1.0
+      ],
+      "coefficients_mib": [
+        12.472607474510513,
+        91.2563770879299,
+        7.982442601505064,
+        48.48798702204552,
+        0.0
+      ],
+      "design_rank": 5,
+      "ridge": 1e-06,
+      "training_rows": 40,
+      "training_gpu_rows": 32,
+      "domain": {
+        "batch_size_range": [
+          1,
+          4
+        ],
+        "sequence_length_range": [
+          32,
+          512
+        ],
+        "output_lengths_seen": [
+          32
+        ],
+        "gpu_counts_seen": [
+          0,
+          3,
+          6,
+          9,
+          12
+        ],
+        "layout": "prefix"
+      },
+      "scope": "Peak PyTorch allocated bytes across the original timed case, NOT total device memory.",
+      "residual": "Empirical temporary/workspace/allocator/cache-growth overhead; not a causal decomposition."
+    },
+    "latency_models": {
+      "compute": {
+        "schema_version": "0.1.0",
+        "variant": "compute",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              55.95015081902442,
+              5.086315963643218,
+              3545.0482960183044,
+              12.529056615352205,
+              1541.9183206700352,
+              112.18052582800972,
+              55.15018195634262,
+              9.479866952322183
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 252.49347475,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              55.41940331439777,
+              3.9617798120070837,
+              3551.1681541180383,
+              14.323883098537621,
+              1547.4193891953519,
+              168.70117016600503,
+              54.43154559004968,
+              11.69320961341547
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 253.5314955,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              29.75805963643244,
+              7.953950858093955,
+              24.398702477823335,
+              2.0300648988398673,
+              60.14797568171377,
+              0.0,
+              26.230504461660793,
+              0.19826291555478562
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 30.00714748387097,
+            "training_rows": 40,
+            "design_rank": 7,
+            "feature_count": 8,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      },
+      "compute_transfer": {
+        "schema_version": "0.1.0",
+        "variant": "compute_transfer",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch",
+          "activation_boundaries",
+          "activation_payload_mib"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              53.39928764400237,
+              5.07084606523093,
+              3537.518003265912,
+              12.77968227145152,
+              1548.917615961153,
+              111.9834465127012,
+              62.56853035120722,
+              9.45671006050519,
+              1.2516193910551805,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 252.49347475,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              52.37808988815296,
+              3.940283582015389,
+              3542.042178003442,
+              14.657302599295997,
+              1555.811008406688,
+              168.4136065435821,
+              63.290071083239425,
+              11.672099097493108,
+              1.4977431723266825,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              24576.0,
+              24576.0,
+              12582912.0,
+              12582912.0,
+              4.0,
+              4.0,
+              2.0,
+              12.0
+            ],
+            "target_scale_ms": 253.5314955,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              29.818717290493034,
+              7.9252075609943775,
+              20.897580030762743,
+              2.199742964905614,
+              59.884779935158306,
+              0.0,
+              29.722850340212165,
+              0.0,
+              0.0,
+              75.93783326475001
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              25344.0,
+              25344.0,
+              4.0,
+              4.0,
+              2.0,
+              1.0
+            ],
+            "target_scale_ms": 30.00714748387097,
+            "training_rows": 40,
+            "design_rank": 9,
+            "feature_count": 10,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      }
+    }
+  },
+  {
+    "fold": 8,
+    "held_out_group": "4/512/32",
+    "training_case_indices": [
+      23,
+      3,
+      10,
+      16,
+      33,
+      14,
+      31,
+      20,
+      13,
+      0,
+      38,
+      9,
+      2,
+      27,
+      21,
+      44,
+      19,
+      34,
+      7,
+      4,
+      30,
+      22,
+      26,
+      29,
+      28,
+      42,
+      15,
+      17,
+      6,
+      8,
+      39,
+      12,
+      37,
+      18,
+      24,
+      25,
+      11,
+      5,
+      36,
+      40
+    ],
+    "held_out_case_indices": [
+      1,
+      43,
+      41,
+      35,
+      32
+    ],
+    "memory_model": {
+      "schema_version": "0.2.0",
+      "model_config": {
+        "vocab_size": 50257,
+        "n_positions": 1024,
+        "n_embd": 768,
+        "n_layer": 12,
+        "n_head": 12,
+        "n_inner": null,
+        "layer_norm_epsilon": 1e-05
+      },
+      "model_source": {
+        "model_id": "openai-community/gpt2",
+        "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+      },
+      "feature_names": [
+        "gpu_active",
+        "prefill_hidden_mib",
+        "prefill_attention_mib",
+        "final_gpu_kv_mib",
+        "last_position_logits_mib"
+      ],
+      "feature_scales": [
+        1.0,
+        3.0,
+        24.0,
+        76.359375,
+        1.0
+      ],
+      "coefficients_mib": [
+        11.868597297358741,
+        36.751114505999574,
+        7.6142962818415585,
+        34.373733430086794,
+        1.5299248790749393
+      ],
+      "design_rank": 5,
+      "ridge": 1e-06,
+      "training_rows": 40,
+      "training_gpu_rows": 32,
+      "domain": {
+        "batch_size_range": [
+          1,
+          4
+        ],
+        "sequence_length_range": [
+          32,
+          512
+        ],
+        "output_lengths_seen": [
+          32
+        ],
+        "gpu_counts_seen": [
+          0,
+          3,
+          6,
+          9,
+          12
+        ],
+        "layout": "prefix"
+      },
+      "scope": "Peak PyTorch allocated bytes across the original timed case, NOT total device memory.",
+      "residual": "Empirical temporary/workspace/allocator/cache-growth overhead; not a causal decomposition."
+    },
+    "latency_models": {
+      "compute": {
+        "schema_version": "0.1.0",
+        "variant": "compute",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              58.290007613936986,
+              7.0315716466793665,
+              1822.6558555598467,
+              19.180973952636613,
+              578.033062818324,
+              37.23129455716306,
+              34.814711552699215,
+              1.4953363788391039
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              12288.0,
+              12288.0,
+              6291456.0,
+              6291456.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 178.84909975,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              57.663259561601805,
+              6.311241208202051,
+              1853.8226183150775,
+              17.68893147950728,
+              528.1757754240218,
+              71.28243405484481,
+              31.59152985083757,
+              2.4714655158117402
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              12288.0,
+              12288.0,
+              6291456.0,
+              6291456.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 185.09969225,
+            "training_rows": 40,
+            "design_rank": 8,
+            "feature_count": 8,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              27.47439175157191,
+              8.040696745900375,
+              31.139122504028176,
+              0.0,
+              27.747202253118186,
+              0.0,
+              27.748957749529936,
+              1.9705863813006514
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              12672.0,
+              12672.0,
+              4.0,
+              4.0
+            ],
+            "target_scale_ms": 28.91034958870968,
+            "training_rows": 40,
+            "design_rank": 7,
+            "feature_count": 8,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      },
+      "compute_transfer": {
+        "schema_version": "0.1.0",
+        "variant": "compute_transfer",
+        "feature_names": [
+          "cpu_block_count",
+          "gpu_block_count",
+          "cpu_linear_work",
+          "gpu_linear_work",
+          "cpu_attention_work",
+          "gpu_attention_work",
+          "cpu_endpoint_batch",
+          "gpu_endpoint_batch",
+          "activation_boundaries",
+          "activation_payload_mib"
+        ],
+        "model_config": {
+          "vocab_size": 50257,
+          "n_positions": 1024,
+          "n_embd": 768,
+          "n_layer": 12,
+          "n_head": 12,
+          "n_inner": null,
+          "layer_norm_epsilon": 1e-05
+        },
+        "model_source": {
+          "model_id": "openai-community/gpt2",
+          "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e"
+        },
+        "benchmark_environment": {
+          "gpu_name": "Tesla T4",
+          "torch_threads": 2,
+          "torch_interop_threads": 1,
+          "cpu_count_logical": 2,
+          "lscpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           46 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Xeon(R) CPU @ 2.00GHz\nCPU family:                              6\nModel:                                   85\nThread(s) per core:                      2\nCore(s) per socket:                      1\nSocket(s):                               1\nStepping:                                3\nBogoMIPS:                                4000.38\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               32 KiB (1 instance)\nL1i cache:                               32 KiB (1 instance)\nL2 cache:                                1 MiB (1 instance)\nL3 cache:                                38.5 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Vulnerable\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Mitigation; PTE Inversion\nVulnerability Mds:                       Vulnerable; SMT Host state unknown\nVulnerability Meltdown:                  Vulnerable\nVulnerability Mmio stale data:           Vulnerable\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Vulnerable\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Vulnerable\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Vulnerable\nVulnerability Vmscape:                   Not affected",
+          "packages": {
+            "torch": "2.11.0+cu128",
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "safetensors": "0.8.0",
+            "huggingface-hub": "0.36.2",
+            "transformers": "4.48.3"
+          },
+          "cuda_runtime": "12.8",
+          "dtype": "float32 on both devices",
+          "attention": "explicit eager causal attention"
+        },
+        "domain": {
+          "batch_size_range": [
+            1,
+            4
+          ],
+          "sequence_length_range": [
+            32,
+            512
+          ],
+          "output_lengths_seen": [
+            32
+          ],
+          "gpu_counts_seen": [
+            0,
+            3,
+            6,
+            9,
+            12
+          ],
+          "layout": "prefix"
+        },
+        "targets": {
+          "prefill_ms": {
+            "coefficients_ms": [
+              57.58307917526597,
+              7.0249019979832,
+              1809.2907686571841,
+              19.20837028486083,
+              580.7758381033875,
+              37.18724814008158,
+              38.355667363131055,
+              1.4913746462610329,
+              0.3116455812877542,
+              6.011054639445813
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              12288.0,
+              12288.0,
+              6291456.0,
+              6291456.0,
+              4.0,
+              4.0,
+              2.0,
+              6.0
+            ],
+            "target_scale_ms": 178.84909975,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "ttft_ms": {
+            "coefficients_ms": [
+              56.7747841052114,
+              6.302061696748593,
+              1851.9159760885525,
+              17.742968363735535,
+              530.1718213019423,
+              71.23405973514723,
+              33.581247806203606,
+              2.4709566112176033,
+              0.46922466446498756,
+              0.0
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              12288.0,
+              12288.0,
+              6291456.0,
+              6291456.0,
+              4.0,
+              4.0,
+              2.0,
+              6.0
+            ],
+            "target_scale_ms": 185.09969225,
+            "training_rows": 40,
+            "design_rank": 10,
+            "feature_count": 10,
+            "ridge": 1e-06
+          },
+          "decode_tpot_ms": {
+            "coefficients_ms": [
+              27.56265948754568,
+              8.012882085360186,
+              28.471720371328093,
+              1.8973446167874068,
+              27.562956127671026,
+              0.0,
+              30.355538117489928,
+              0.013526872442477278,
+              0.0,
+              94.61367127146079
+            ],
+            "feature_scales": [
+              12.0,
+              12.0,
+              48.0,
+              48.0,
+              12672.0,
+              12672.0,
+              4.0,
+              4.0,
+              2.0,
+              1.0
+            ],
+            "target_scale_ms": 28.91034958870968,
+            "training_rows": 40,
+            "design_rank": 9,
+            "feature_count": 10,
+            "ridge": 1e-06
+          }
+        },
+        "scope": "Retrospective empirical model; not causal profiling, a hardware simulator, or a tail-latency guarantee."
+      }
+    }
+  }
+]

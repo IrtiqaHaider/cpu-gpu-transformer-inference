@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "archived_sha256": "4e5918a8382d0487c5e5f4c80a8318f41a175c629882ae561de96619179bfae9",
+  "csv_tables_reproduced": 18,
+  "step3_trials": 230,
+  "step4_trials": 260,
+  "frozen_models_unchanged": true,
+  "historical_refit_checked": true,
+  "python": "3.13.5",
+  "new_gpu_inference": false,
+  "note": "Analysis reproduction, not a replication of GPU measurements. Raw input archives unchanged."
+}

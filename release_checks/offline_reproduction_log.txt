@@ -1,0 +1,52 @@
+# Research step 1: retrospective cost-model baseline
+
+Validated 45 main-sweep configurations and 450 raw trials.
+Used 9 leave-one-workload-out folds per model.
+No new GPU inference was executed. Historical exploratory data is not a new blind test.
+
+## Median absolute percentage error on withheld workload groups
+
+| Model | Prefill | TTFT | Decode step | Generation |
+| --- | ---: | ---: | ---: | ---: |
+| compute | 5.46% | 6.08% | 6.40% | 6.25% |
+| compute_transfer | 4.97% | 6.07% | 7.06% | 6.18% |
+
+Lower is better. Do not interpret 100 minus percentage error as model accuracy.
+The summary JSON also reports mean/worst errors; inspect per-case failures, not only the median.
+
+## Scope and limitations
+
+Saved: /mnt/data/step5_work/reproduction_test/refit_step1
+# Step 2: GPU-memory estimation and budget-aware placement
+
+Step 1 artifact, source identity and saved predictions passed reproduction checks.
+Audited 45 configurations and 450 original trials.
+No GPU inference was executed.
+
+## Retrospective memory prediction (GPU rows only)
+Median error: 0.73%; worst error: 3.78%.
+Heuristic-guard misses: 0/36 allocation rows.
+
+## Policy evaluation
+
+| Policy | Decisions | Budget violations | Median feasible regret | Worst feasible regret |
+| --- | ---: | ---: | ---: | ---: |
+| max_gpu | 72 | 0 | 0.00% | 92.08% |
+| compute | 72 | 0 | 0.00% | 92.08% |
+| compute_transfer | 72 | 0 | 0.00% | 92.08% |
+
+Shared memory filter; oracle uses actual allocations without a heuristic margin.
+Violation cases are counted, not rewarded with deceptively low regret.
+Saved: /mnt/data/step5_work/reproduction_test/refit_step2
+{
+  "status": "passed",
+  "archived_sha256": "4e5918a8382d0487c5e5f4c80a8318f41a175c629882ae561de96619179bfae9",
+  "csv_tables_reproduced": 18,
+  "step3_trials": 230,
+  "step4_trials": 260,
+  "frozen_models_unchanged": true,
+  "historical_refit_checked": true,
+  "python": "3.13.5",
+  "new_gpu_inference": false,
+  "note": "Analysis reproduction, not a replication of GPU measurements. Raw input archives unchanged."
+}

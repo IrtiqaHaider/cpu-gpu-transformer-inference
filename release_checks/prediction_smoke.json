@@ -1,0 +1,20 @@
+{
+  "status": "predicted_feasible",
+  "policy": "compute_transfer",
+  "gpu_budget_mib": 640.0,
+  "batch_size": 3,
+  "sequence_length": 256,
+  "new_tokens": 32,
+  "selected": {
+    "gpu_layers": 9,
+    "predicted_peak_mib": 510.3463911300933,
+    "guarded_peak_mib": 551.863710686598,
+    "payload_floor_mib": 447.990234375,
+    "extrapolation": false,
+    "predicted_generation_ms_compute": 1251.6250592357073,
+    "predicted_generation_ms_compute_transfer": 1273.403377858048
+  },
+  "measured": false,
+  "constraint": "Heuristic peak PyTorch allocation budget, NOT physical GPU capacity.",
+  "cpu_ram_assumption": "Sufficient CPU RAM; CPU RAM and other processes are not constrained."
+}
